@@ -1,0 +1,448 @@
+* {
+    padding:0;
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Verdana', Arial, sans-serif !important;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(66, 65, 65) 0%, rgba(16, 0, 1, 0.009) 100%);
+}
+header nav {
+    display:flex;
+    flex-direction:row;
+}
+
+.boton_inicio {
+    margin-top:5px;
+    margin-left:12.5px;
+    margin-right:12.5px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.boton_inicio:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.boton_inicio:focus {
+    outline: none;
+}
+
+.boton_inicio p {
+    margin: 0;
+}
+
+.boton_directores, .boton_generos{
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    font-size:18px;
+    margin-left: 5.5px;
+    padding: 10px 20px;
+    height: 50px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+
+.boton_directores:hover, .boton_generos:hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+
+.boton_directores:before, .boton_generos:before,.boton_directores:after, .boton_generos:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+  }
+
+.boton_directores:after, .boton_generos:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.boton_directores:hover:before, .boton_generos:hover:before,.boton_directores:hover:after, .boton_generos:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.generos-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    margin-left: 5.5px;
+
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.genero-item {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.genero-item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.genero-item:hover {
+    background-color: #1AAB8A;
+    color: #fff;
+}
+
+.caja_generos_boton:hover .generos-dropdown {
+    display: block;
+}
+
+.buscador {
+    position:absolute;
+    right:10%;
+}
+
+.input_buscador {
+    height: 30px;
+    width: 215px;
+    border-radius:20px;
+    border:black;
+    outline:0;
+}
+
+#input_texto {
+    margin-top:10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    cursor:auto;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+input[type="submit"]:focus {
+    outline: none;
+}
+
+body {
+    background: linear-gradient(90deg, rgb(74, 213, 255) 10%, rgb(0, 52, 101) 90%);
+}
+
+body {
+    background-image:url('../img/fondo.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Roboto", sans-serif !important;
+}
+
+.articulos {
+    display:flex;
+    align-items:center;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+}
+
+.articulos img {
+    margin-bottom: -3.5px;
+}
+
+.articulos div {
+    display:flex;
+    position: relative;
+    display: inline-block;
+    justify-items: auto;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+}
+
+.articulos div .nombre_pelicula {
+    text-align: center;
+    bottom:1.25%;
+    width: 215px;
+    height:32.5px;
+    color: #f2f2f2;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 8px;
+    margin: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0.5, 0.5, 0.5, 1);
+}
+
+.articulos h1 {
+    color:white;
+    font-family: 'Times New Roman', Times, serif !important;
+    position: relative;
+    z-index: 1;
+    margin-top: 125px;
+    font-size: 75px;
+    text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.729);
+}
+
+.articulos div:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.nombre_pelicula {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    padding: 5px !important;
+    margin: 0 !important;
+    font-weight: bold !important;
+}
+
+.sinopsis_pelicula {
+    margin-right: 10px;
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 225px;
+    height: 57.5px;
+    background-color: rgba(255, 196, 137, 0.7) !important;
+    font-weight: bold !important;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.729);
+    font-size:12.5px;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.sinopsis_pelicula a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 123, 255);
+}
+
+.sinopsis_pelicula a:hover {
+    color: rgb(139, 110, 212);
+}
+
+.sinopsis_pelicula a:active {
+    color: rgb(0, 123, 255);
+}
+
+.contenedor:hover .sinopsis_pelicula {
+    opacity: 1;
+}
+
+.contenedor {
+    display:flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.contenedor img {
+    transition: transform 0.3s;
+}
+
+.contenedor:hover img {
+    -webkit-transform: scale(1.125);
+    transform: scale(1.125);
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(66, 65, 65) 0%, rgba(16, 0, 1, 0.009) 100%);
+    color: #fff;
+    padding: 12.5px 0;
+    text-align: center;
+}
+
+footer p {
+    text-align: center;
+    font-family: Be Vietnam Pro, sans-serif;
+    color: #fff;
+    font-size: 17px;
+}
+
+footer a {
+    text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.729);
+    color: #ff4500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+@media (max-width: 760px) {
+    header {
+        height: auto;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caja_boton_inicio,
+    .caja_directores_boton,
+    .caja_generos_boton,
+    .buscador {
+        margin-bottom: 10px;
+    }
+
+    .buscador {
+        position: static;
+        margin-top: 0;
+    }
+
+    #input_texto {
+        margin-top: 0;
+    }
+
+    .boton_generos, .boton_directores, .boton_inicio {
+        width:160px;
+        border-radius: 5px;
+    }
+
+    .boton_inicio {
+        margin-right:7.75px;
+    }
+}
+body {
+    display:grid;
+    min-height: calc(100vh - 100px - 300px);
+    grid-template-rows: auto 1fr auto;
+    margin-bottom: 60px;
+}
+
+.cajaPaginaNotFound {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 37.5px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.cajaPaginaNotFound:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    background-color: #333;
+    color: #fff;
+}
+
+.cajaPaginaNotFound h1 {
+    font-size: 37.5px;
+}
+
+
+
+.directores-container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.directores-container:hover {
+    -webkit-transform: scale(1.125);
+    transform: scale(1.125);
+}
+
+.directores-container h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.directores-list {
+    list-style: none;
+    padding: 0;
+}
+
+.caja_directores {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.caja_directores p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.directoresDiv {
+    display:flex;
+    align-items:center;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+}
+
+.info_pelicula{
+    color: whitesmoke;
+    font-family: 'Segoe UI';
+    background-color: #080f28;
+    margin: 2%;
+    padding: 2%;
+    border: 3px solid whitesmoke;
+    border-radius: 20px;
+}

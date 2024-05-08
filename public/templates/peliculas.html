@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/estilos/peliculasEstilos.css">
+    <link rel="shortcut icon" href="../static/img/icon.png">
+    <title>Películas Online</title>
+</head>
+<body>
+    <div id="contenedor">
+        <header>
+            <nav>
+                <div class="caja_boton_inicio">
+                    <button class="boton_inicio" onclick="irAPeliculas()">
+                        <p>Inicio</p>
+                    </button>
+                </div>
+
+                <div class="caja_directores_boton">
+                    <button class="boton_directores" onclick="irADirectores()">
+                        <p>Directores</p>
+                    </button>
+                </div>
+
+                <div class="caja_generos_boton">
+                    <button class="boton_generos">
+                        <p>Géneros</p>
+                    </button>
+                    <div class="generos-dropdown" id="generosDropdown">
+                        <div class="genero-item">
+                            <a href="/peliculas/genero/aventura">Aventura</a>
+                        </div>
+                        <div class="genero-item">
+                            <a href="/peliculas/genero/accion">Acción</a>
+                        </div>
+                        <div class="genero-item">
+                            <a href="/peliculas/genero/comedia">Comedia</a>
+                        </div>
+                        <div class="genero-item">
+                            <a href="/peliculas/genero/drama">Drama</a>
+                        </div>
+                        <div class="genero-item">
+                            <a href="/peliculas/genero/animacion">Animación</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buscador">
+                    <form class="formulario_buscar" action="/peliculas/buscar" method="post">
+                        <input type="text" id="input_texto" name="busqueda" placeholder="  Que desea buscar?" 
+                        class="input_buscador" required minlength="3" pattern="^[a-zA-Z0-9 ]+$">
+                        <input type="submit" value="Buscar" class="boton-menu">
+                    </form>
+                    <div id="results"></div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+
+        </main>
+        
+        <footer>
+            <p>
+                &copy; 2023 - Integrantes:
+                <a href="https://github.com/GonzaloStickar" target="_blank">Gonzalo Stickar</a>,
+                <a href="https://github.com/lcossia" target="_blank">Luciano Cossia</a>,
+                <a href="https://github.com/FacundoElizalde" target="_blank">Facundo Elizalde</a>.
+            </p>
+        </footer>
+    </div>
+    <script>
+        function irAPeliculas() {
+            window.location.href = "/peliculas";
+        }
+
+        function irADirectores() {
+            window.location.href = "/peliculas/directores";
+        }
+    </script>
+</body>
+</html>

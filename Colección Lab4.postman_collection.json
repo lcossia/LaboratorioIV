@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "e29148bd-fa05-413e-a719-e21e8f20894a",
+		"name": "Colección Lab4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24288105"
+	},
+	"item": [
+		{
+			"name": "peliculas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/peliculas"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"busqueda\":\"Star\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/peliculas/buscar"
+			},
+			"response": []
+		},
+		{
+			"name": "directores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/peliculas/directores"
+			},
+			"response": []
+		},
+		{
+			"name": "generos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/peliculas/drama"
+			},
+			"response": []
+		}
+	]
+}
